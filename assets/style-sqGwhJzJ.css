@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap');
+.budget-view[data-v-3388503a] {
+  position: relative;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  justify-self: center;
+  align-self: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 90%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+.budget-view[data-v-3388503a] {
+    flex-direction: column;
+    width: 95%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: scroll;
+}
+}
+
+
+
+/* j'importe les fonts depuis google fonts */
+/* Définition des variables de police */
+/* Ces variables peuvent être utilisées dans les fichiers CSS pour appliquer les polices */
+:root{
+   /* Fonts de l'application */
+   --font-primary: 'Inter', sans-serif;
+   --font-secondary: 'Roboto', sans-serif;
+
+   /* Couleurs de l'application */
+   --color-primary: rgb(111, 74, 230);
+   --color-secondary: rgb(132, 99, 212);
+   --color-valid: #4CAF8D;
+   --color-error: #e35d6a;
+   --background-low-opacity:#c1beef15;
+   --pink-color-background: rgba(248, 219, 243, 0.837);
+   --light-lavender: rgb(168,160,209);
+   --lither-lavender: #F1EAF7;
+   --deep-violet: #3E2563;
+   --deeper-violet: #2E1A4F;
+   --mid-violet: #6F4AA3;
+   --light-pink: rgb(236, 206, 225);
+   --light-blue: rgb(200,192,214);
+   --dark-blue: rgba(27, 52, 97, 1.00);
+   --light-beige: rgb(218,205,217);
+   --linear-gradient-button: linear-gradient(130deg, rgb(135, 110, 193),80%, rgb(189, 131, 225));
+   --golden-gradient-button: linear-gradient(30deg, rgb(139, 81, 177),80%, rgb(255, 223, 70));
+
+
+   /* Taille de police */
+   --font-size-small: 1rem; /* 14px */
+   --font-size-medium: 1.5rem; /* 16px */
+   --font-size-large: 2rem; /* 18px */
+   --font-size-xlarge: 3rem; /* 20px */
+
+   /* Taille des éléments */
+   --element-size-small: 30px;
+   --element-size-medium: 40px;
+   --element-size-large: 50px;
+   --element-size-xlarge: 60px;
+
+   /* Espacement */
+   --spacing-small: 10px; 
+   --spacing-medium: 20px;
+   --spacing-large: 30px;
+   --spacing-xlarge: 50px;
+
+   /* largeur écrans */
+   --screen-size-small: 480px;
+   --screen-size-medium: 768px;
+   --screen-size-large: 1024px;
+   --screen-size-xlarge: 1440px;
+}
+/* je définis les thèmes de couleurs pour l'application */
+
+:root {
+  /* Mode sombre (par défaut) */
+
+  --color-background: hsl(0, 0%, 17%);
+  --color-text: rgb(132, 99, 212);
+  --color-text-BW: #ffffff;
+  --color-text-WB: #000000;
+  --color-border: #2c2c2c;
+  --color-muted: #9ca3af;
+  --color-bar:#535151;
+  --background-gradient: linear-gradient(rgba(216, 36, 36, 0),rgb(137, 43, 226));
+  --color-icon: #ffffff;
+  --color-error: #e35d6a;
+}
+
+[data-theme="light"] {
+    /* Mode clair */
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-text-BW: #000000;
+  --color-text-WB: #ffffff;
+  --color-border: #e5e7eb;
+  --color-muted: #6b7280;
+  --color-bar: #ffffff;
+  --background-gradient: linear-gradient(0deg,rgba(137, 43, 226, 0.135),rgba(255, 0, 0, 0));
+  --color-icon: #007dff;
+  --color-error:#e35d6a;
+
+}*{
+    /* je retire les marges et les espacements par défaut */
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    /*je définis les parametre généraux du texte */
+    color: var(--color-text);
+    text-align: center;
+    text-decoration: none;
+    /* retire les puces */
+    list-style: none; 
+
+}
+body {
+    /* je définis la couleur de fond et la couleur du texte */
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-primary);
+    justify-content: center;
+}
+/* style pour les boutons et input */
+.primary-button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.primary-button:hover {
+  background-color: var(--color-secondary);
+}
+
+  /*style grisé pour les seconds boutons  */
+.secondary-button {
+  background-color: #535151;
+  color: white;
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.secondary-button:hover {
+  background-color: #9ca3af;
+}
+.super-action-button{
+  background: var(--golden-gradient-button);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 0px 10px rgb(255, 223, 70);
+}
+.super-action-button:hover {
+  box-shadow: 0 0px 30px rgb(255, 223, 70);
+}
+/* style pour les boutons et input */
+.danger-button {
+  background-color: var(--color-error);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+
+
+}
+
+.danger-button:hover {
+opacity: 0.9;
+}
+.no-style-button{
+  background-color: transparent;
+  border: none;
+}
+
+.input-form{
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background-color: var(--color-background) ;
+  color: var(--color-text);
+  font-weight: 500;
+  height: 40px;
+  border: 2px var(--color-muted) solid;
+
+}
+.input-maj{
+
+  border: none;
+  font-size: 1rem;
+  background-color: var(--color-background) ;
+  color: var(--color-text);
+  font-weight: 500;
+  height: 40px;
+  border-bottom: 2px var(--color-muted) solid;
+ 
+}
+.icon{
+  width: 40px;
+  height: 40px;
+}
+textarea {
+  resize: none;
+  font-family: var(--font-primary);
+}
+
+h2{
+  color:var(--color-secondary)
+}
+.erreur {
+  color: var(--color-error);
+  font-size: 0.8rem;
+  margin: 0 0 10px 0;
+}
+.low-opacity{
+  opacity:0.5
+}
+.text-black-and-white{
+  color: var(--color-text-BW);
+}
+.text-white-and-black{
+  color: var(--color-text-WB);
+}
